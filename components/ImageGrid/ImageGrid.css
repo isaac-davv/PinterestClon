@@ -1,0 +1,43 @@
+.image-grid {
+    width: 95%;
+    max-width: 1400px; 
+    margin: 20px auto; 
+    column-count: 4; 
+    column-gap: 15px; 
+}
+
+.image-grid .image-card {
+    width: 100%;
+    break-inside: avoid; 
+    margin-bottom: 15px; 
+    border-radius: 12px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (max-width: 1200px) {
+    .image-grid {
+        column-count: 3; 
+    }
+}
+
+@media (max-width: 900px) {
+    .image-grid {
+        column-count: 2; 
+    }
+}
+
+@media (max-width: 600px) {
+    .image-grid {
+        column-count: 2; 
+        column-gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .image-grid {
+        column-count: 1; 
+        width: 95%;
+    }
+}

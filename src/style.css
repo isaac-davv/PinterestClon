@@ -1,0 +1,24 @@
+
+:root {
+    --color-pinterest-rojo: #bd081c;
+    --color-texto-principal: #111111;
+    --color-texto-secundario: #767676;
+    --color-background-defecto: #ffffff;
+    --color-background-hover: #e9e9e9;
+    --color-input-background: #efefef;
+    --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+*, *::before, *::after {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    color: var(--color-texto-principal);
+    background-color: var(--color-background-defecto);
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
