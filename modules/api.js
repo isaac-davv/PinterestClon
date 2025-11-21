@@ -1,10 +1,13 @@
-const ACCESS_KEY = 'Gestrtiowd7j7k8x1abd2EEgG9IXPw5taD61jbIpq5s'; 
-const BASE_URL = "https://api.unsplash.com";
+const ACCESS_KEY = import.meta.env.VITE_ACCESS_KEY;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-export async function fetchImages(query = 'Espacio', perPage = 30) {
+export async function fetchImages(query = 'huevo', perPage = 30) {
+   
     const finalQuery = String(query).trim() || 'Lionel Messi';
     try {
         const url = `${BASE_URL}/search/photos?query=${encodeURIComponent(finalQuery)}&per_page=${perPage}&client_id=${ACCESS_KEY}`;
+        
+        console.log('🔍 Realizando búsqueda:', finalQuery);
         
         const res = await fetch(url);
         
@@ -13,12 +16,12 @@ export async function fetchImages(query = 'Espacio', perPage = 30) {
         }
         
         const data = await res.json();
-        console.log("Datos COMPLETOS de la respuesta de Unsplash:", data);
+        console.log("✅ Datos obtenidos correctamente:", data.results.length, "imágenes");
         
         return data.results; 
         
     } catch (error) {
-        console.error("Error al obtener imágenes de Unsplash:", error);
+        console.error("❌ Error al obtener imágenes de Unsplash:", error);
         return []; 
     }
 }
